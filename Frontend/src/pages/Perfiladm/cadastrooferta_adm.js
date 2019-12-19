@@ -115,152 +115,154 @@ class CadastroOferta_adm extends Component {
             <div>
                 <Header />
                 <main>
-                    <div className="cont_branco">
-                        <div className="organizacao_adm">
-                            <Menuadm></Menuadm>
-                            <div className="adm_configs_dir">
-                                <h2>CADASTRO DE OFERTAS</h2>
-                                <hr />
-                                        <MDBCol md="6">
-                                            <form onSubmit={this.postOferta}>
-                                                <label htmlFor="defaultFormContactNameEx" className="black-text">
-                                                    Título da Oferta</label>
-                                                <input
-                                                    type="text"
-                                                    id="defaultFormContactNameEx"
-                                                    className="form-control"
-                                                    name="nomeOferta"
-                                                    value={this.state.postOferta.nomeOferta}
-                                                    onChange={this.postSetState}
-                                                /><br />
-                                                <label htmlFor="defaultFormContactEmailEx" className="black-text">
-                                                    Marca do produto:</label>
-                                                <input
-                                                    type="text"
-                                                    id="defaultFormContactEmailEx"
-                                                    className="form-control"
-                                                    name="marca"
-                                                    value={this.state.postOferta.marca}
-                                                    onChange={this.postSetState}
-                                                /><br />
-                                                <label
-                                                    htmlFor="defaultFormContactSubjectEx"
-                                                    className="black-text">
-                                                    Preço:</label>
-                                                <input
-                                                    type="text"
-                                                    id="defaultFormContactSubjectEx"
-                                                    className="form-control"
-                                                    name="preco"
-                                                    value={this.state.postOferta.preco}
-                                                    onChange={this.postSetState}
-                                                /><br />
-                                                <label
-                                                    htmlFor="defaultFormContactSubjectEx"
-                                                    className="black-text">
-                                                    Validade:</label>
-                                                <input
-                                                    type="text"
-                                                    id="defaultFormContactSubjectEx"
-                                                    className="form-control"
-                                                    name="validade"
-                                                    value={this.state.postOferta.validade}
-                                                    onChange={this.postSetState}
-                                                /><br />
-                                                <label
-                                                    htmlFor="defaultFormContactSubjectEx"
-                                                    className="black-text">
-                                                    Quantidade para venda:</label>
-                                                <input
-                                                    type="text"
-                                                    id="defaultFormContactSubjectEx"
-                                                    className="form-control"
-                                                    name="quantVenda"
-                                                    value={this.state.postOferta.quantVenda}
-                                                    onChange={this.postSetState}
-                                                /><br />
-                                                <label
-                                                    htmlFor="defaultFormContactMessageEx"
-                                                    className="black-text">
-                                                    Informações adicionais</label>
-                                                <textarea
-                                                    type="text"
-                                                    id="defaultFormContactMessageEx"
-                                                    className="form-control"
-                                                    name="descricao"
-                                                    value={this.state.postOferta.descricao}
-                                                    onChange={this.postSetState}
-                                                /><br />
-                                                <label
-                                                    htmlFor="defaultFormContactSubjectEx"
-                                                    className="black-text">
-                                                    Tipo de Produto:</label>
-                                                <select className="browser-default custom-select"
-                                                    name="idProduto"
-                                                    value={this.state.postOferta.idProduto}
-                                                    onChange={this.postSetState}>
-                                                    <option value="">Escolha uma categoria de Produto...</option>
-                                                    {
-                                                        this.state.listaProdutos.map(function (p) {
-                                                            return (
-                                                                <option
-                                                                    key={p.idProduto}
-                                                                    value={p.idProduto}> {p.nomeProduto}
-                                                                </option>
-                                                            )
-                                                        })
-                                                    }
-                                                </select><br />
-                                                <label
-                                                    htmlFor="defaultFormContactSubjectEx"
-                                                    className="black-text">
-                                                    Fornecedor:</label>
-                                                <select className="browser-default custom-select"
-                                                    name="idUsuario"
-                                                    value={this.state.postOferta.idUsuario}
-                                                    onChange={this.postSetState}>
-                                                    <option value="">Escolha um Fornecedor...</option>
-                                                    {
-                                                        this.state.listaUsuarios.map(function (u) {
-                                                            return (
-                                                                <option
-                                                                    key={u.idUsuario}
-                                                                    value={u.idUsuario}> {u.nome}
-                                                                </option>
-                                                            )
-                                                        })
-                                                    }
-                                                </select><br />
-                                                <label
-                                                    htmlFor="defaultFormContactSubjectEx"
-                                                    className="black-text">
-                                                    Imagem do produto:</label>
-                                                <input
-                                                    type="file"
-                                                    className="form-control"
-                                                    name="imagem"
-                                                    ref={this.state.postOferta.imagem}
-                                                /><br />
-                                                <div className="text-center mt-4">
-                                                    <MDBBtn color="amber" outline type="submit">
-                                                        Cadastrar
-                                            <MDBIcon far icon="paper-plane" className="ml-2" />
-                                                    </MDBBtn>
-                                                    {
-                                                        this.state.erroMsg &&
-                                                        <MDBAlert color="danger" >
-                                                            {this.state.erroMsg}
-                                                        </MDBAlert>
-                                                    }
-                                                    {
-                                                        this.state.sucessMsg &&
-                                                        <MDBAlert color="sucess" >
-                                                            {this.state.sucessMsg}
-                                                        </MDBAlert>
-                                                    }
-                                                </div>
-                                            </form>
-                                        </MDBCol>
+                    <div className="container">
+                        <div className="cont_branco">
+                            <div className="organizacao_adm">
+                                <Menuadm></Menuadm>
+                                <div className="adm_configs_dir">
+                                    <h2>CADASTRO DE OFERTAS</h2>
+                                    <hr />
+                                            <MDBCol md="6">
+                                                <form onSubmit={this.postOferta}>
+                                                    <label htmlFor="defaultFormContactNameEx" className="black-text">
+                                                        Título da Oferta</label>
+                                                    <input
+                                                        type="text"
+                                                        id="defaultFormContactNameEx"
+                                                        className="form-control"
+                                                        name="nomeOferta"
+                                                        value={this.state.postOferta.nomeOferta}
+                                                        onChange={this.postSetState}
+                                                    /><br />
+                                                    <label htmlFor="defaultFormContactEmailEx" className="black-text">
+                                                        Marca do produto:</label>
+                                                    <input
+                                                        type="text"
+                                                        id="defaultFormContactEmailEx"
+                                                        className="form-control"
+                                                        name="marca"
+                                                        value={this.state.postOferta.marca}
+                                                        onChange={this.postSetState}
+                                                    /><br />
+                                                    <label
+                                                        htmlFor="defaultFormContactSubjectEx"
+                                                        className="black-text">
+                                                        Preço:</label>
+                                                    <input
+                                                        type="text"
+                                                        id="defaultFormContactSubjectEx"
+                                                        className="form-control"
+                                                        name="preco"
+                                                        value={this.state.postOferta.preco}
+                                                        onChange={this.postSetState}
+                                                    /><br />
+                                                    <label
+                                                        htmlFor="defaultFormContactSubjectEx"
+                                                        className="black-text">
+                                                        Validade:</label>
+                                                    <input
+                                                        type="text"
+                                                        id="defaultFormContactSubjectEx"
+                                                        className="form-control"
+                                                        name="validade"
+                                                        value={this.state.postOferta.validade}
+                                                        onChange={this.postSetState}
+                                                    /><br />
+                                                    <label
+                                                        htmlFor="defaultFormContactSubjectEx"
+                                                        className="black-text">
+                                                        Quantidade para venda:</label>
+                                                    <input
+                                                        type="text"
+                                                        id="defaultFormContactSubjectEx"
+                                                        className="form-control"
+                                                        name="quantVenda"
+                                                        value={this.state.postOferta.quantVenda}
+                                                        onChange={this.postSetState}
+                                                    /><br />
+                                                    <label
+                                                        htmlFor="defaultFormContactMessageEx"
+                                                        className="black-text">
+                                                        Informações adicionais</label>
+                                                    <textarea
+                                                        type="text"
+                                                        id="defaultFormContactMessageEx"
+                                                        className="form-control"
+                                                        name="descricao"
+                                                        value={this.state.postOferta.descricao}
+                                                        onChange={this.postSetState}
+                                                    /><br />
+                                                    <label
+                                                        htmlFor="defaultFormContactSubjectEx"
+                                                        className="black-text">
+                                                        Tipo de Produto:</label>
+                                                    <select className="browser-default custom-select"
+                                                        name="idProduto"
+                                                        value={this.state.postOferta.idProduto}
+                                                        onChange={this.postSetState}>
+                                                        <option value="">Escolha uma categoria de Produto...</option>
+                                                        {
+                                                            this.state.listaProdutos.map(function (p) {
+                                                                return (
+                                                                    <option
+                                                                        key={p.idProduto}
+                                                                        value={p.idProduto}> {p.nomeProduto}
+                                                                    </option>
+                                                                )
+                                                            })
+                                                        }
+                                                    </select><br />
+                                                    <label
+                                                        htmlFor="defaultFormContactSubjectEx"
+                                                        className="black-text">
+                                                        Fornecedor:</label>
+                                                    <select className="browser-default custom-select"
+                                                        name="idUsuario"
+                                                        value={this.state.postOferta.idUsuario}
+                                                        onChange={this.postSetState}>
+                                                        <option value="">Escolha um Fornecedor...</option>
+                                                        {
+                                                            this.state.listaUsuarios.map(function (u) {
+                                                                return (
+                                                                    <option
+                                                                        key={u.idUsuario}
+                                                                        value={u.idUsuario}> {u.nome}
+                                                                    </option>
+                                                                )
+                                                            })
+                                                        }
+                                                    </select><br />
+                                                    <label
+                                                        htmlFor="defaultFormContactSubjectEx"
+                                                        className="black-text">
+                                                        Imagem do produto:</label>
+                                                    <input
+                                                        type="file"
+                                                        className="form-control"
+                                                        name="imagem"
+                                                        ref={this.state.postOferta.imagem}
+                                                    /><br />
+                                                    <div className="text-center mt-4">
+                                                        <MDBBtn color="amber" outline type="submit">
+                                                            Cadastrar
+                                                <MDBIcon far icon="paper-plane" className="ml-2" />
+                                                        </MDBBtn>
+                                                        {
+                                                            this.state.erroMsg &&
+                                                            <MDBAlert color="danger" >
+                                                                {this.state.erroMsg}
+                                                            </MDBAlert>
+                                                        }
+                                                        {
+                                                            this.state.sucessMsg &&
+                                                            <MDBAlert color="sucess" >
+                                                                {this.state.sucessMsg}
+                                                            </MDBAlert>
+                                                        }
+                                                    </div>
+                                                </form>
+                                            </MDBCol>
+                                </div>
                             </div>
                         </div>
                     </div>

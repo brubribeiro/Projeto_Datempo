@@ -22,13 +22,10 @@ class ajuda extends Component {
                                     <div id="collapseOne" className="collapse show" aria-labelledby="headingOne"
                                         data-parent="#accordionExample">
                                         <div className="card-body">
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                                            3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                                            laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
-                                            coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
-                                            anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-                                            occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
-                                            of them accusamus labore sustainable VHS.
+                                        O Datempo é um marketplace criado com o intuito de diminuir o desperdício de alimentos, reduzir gastos e ajudar pessoas. 
+                                        Alimentos perto do vencimento são anunciados para venda com desconto na plataforma, respeitando o prazo mínimo de 10 dias para a logística de retirada.
+                                        Quanto mais perto o produto está do vencimento, maior será o desconto. Aproveite que DATEMPO de comprar!
+
                                         </div>
                                     </div>
                                 </div>
@@ -43,13 +40,9 @@ class ajuda extends Component {
                                     </div>
                                     <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                         <div className="card-body">
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                                            3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                                            laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
-                                            coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
-                                            anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-                                            occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
-                                            of them accusamus labore sustainable VHS.
+                                        Os fornecedores podem anunciar produtos que estão perto do vencimento ou que desejam aplicar algum desconto. É necessário informar a data de validade, especificar a descrição do alimento, localização do estabelecimento para retirada e incluir foto.
+                                        O produto ficará disponível no mostruário do site até ser reservado e marcado pelo próprio fornecedor como retirado.
+
                                         </div>
                                     </div>
                                 </div>
@@ -64,13 +57,8 @@ class ajuda extends Component {
                                     </div>
                                     <div id="collapseThree" className="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                                         <div className="card-body">
-                                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                                            3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                                            laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
-                                            coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
-                                            anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-                                            occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
-                                            of them accusamus labore sustainable VHS.
+                                        A reserva do produto pode ser feita apenas por usuários cadastrados na plataforma. Caso o pedido seja realizado para outra pessoa, basta informar o PIN e dados do cadastro no momento da retirada do alimento
+                                        biliza pela entrega dos produtos. Cada usuário é responsável pelo seu deslocamento até o fornecedor para retirar a mercadoria.
                                 </div>
                                     </div>
                                 </div>
@@ -85,13 +73,7 @@ class ajuda extends Component {
                             </div>
                             <div id="collapsefor" className="collapse" aria-labelledby="headingfor" data-parent="#accordionExample">
                                 <div className="card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                                    3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                                    laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
-                                    coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
-                                    anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-                                    occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
-                                    of them accusamus labore sustainable VHS.
+                                Assim que o usuário se interessar pela oferta, basta clicar no botão reservar e gerar o PIN do pedido de reserva. Com as informações de cadastro e número do PIN, basta entrar em contato com o fornecedor e retirar a mercadoria em cada loja responsável.
                                 </div>
                             </div>
                         </div>

@@ -118,13 +118,22 @@ class Perfilusuario extends Component {
                             <div className="container_perfil">
                                 <div className="imgperfil" >
                                     <img src={"http://localhost:5000/imgPerfil/" + this.state.usuario.imgusuario} alt="Imagem de perfil do usuário" />
-                                    <input
-                                        accept="image/*"
-                                        type="file"
-                                        name="imgusuario"
-                                        onChange={this.alterarSetStateFile}
-                                        ref={this.state.updateUsuario.imgusuario} />
+                                    <div className="custom-file">
+                                        <input
+                                            accept="image/*"
+                                            type="file" 
+                                            class="custom-file-input" 
+                                            id="customFileLang" 
+                                            lang="pt-br"
+                                            name="imgusuario"
+                                            onChange={this.alterarSetStateFile}
+                                            ref={this.state.updateUsuario.imgusuario} />
+                                        <label class="custom-file-label" for="customFileLang">escolha Imagem </label>
+                                    </div>
                                 </div>
+
+                                
+
                                 <div className="form_perfil">
                                     
                                     <form onSubmit={this.updateUsuario} id="form_perfil">

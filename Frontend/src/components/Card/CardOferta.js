@@ -189,7 +189,7 @@ class cardOferta extends Component {
                                         name="quantCompra"
                                         value = { this.state.listaReservas.quantCompra }
                                         onChange = { this.postSetState }
-                                    />
+                                        />
                                     <input
                                         type="hidden"
                                         className="form-control"
@@ -216,6 +216,7 @@ class cardOferta extends Component {
                                     />
                                 </div>
                             </MDBModalBody>
+                            
                             <div className="modal_botoes">
                                 <button className="modal_botao_confirmar_reserva" onClick={this.toggle}>FECHAR</button>
                                 <button  onClick={() => (console.log("idOferta do card: ", this.props.idOferta))} to={{
