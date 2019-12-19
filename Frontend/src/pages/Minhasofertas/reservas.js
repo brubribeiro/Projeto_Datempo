@@ -16,7 +16,8 @@ class Reservas extends Component {
         super()
         this.state = {
             listaReservaOferta: [],
-            mensagemSucesso: ""
+            mensagemSucesso: "",
+
         }
 
     }
