@@ -43,17 +43,29 @@ class Home extends Component {
         }
     }
 
+    componentDidMount(){
+        this.getOferta()
+    }
     //#region GET
+    // getOferta = () => {
+    //     api.get('/oferta')
+    //         .then(response => {
+    //             if (response.status === 200) {
+    //                 var redux = response.slice(,4)
+    //                 this.setState({ listaOferta: redux });
+    //             }
+    //         })
+    // }
+    //#endregion
     getOferta = () => {
-        api.get('/oferta')
+
+        fetch('http://localhost:5000/api/oferta')
+            .then(response => response.json())
             .then(response => {
-                if (response.status === 200) {
-                    this.setState({ listaOferta: response.data });
-                }
+                var redux = response.slice(0, 4)
+                this.setState({ listaOferta: redux })
             })
     }
-    //#endregion
-
     
 
     render() {
@@ -100,7 +112,8 @@ class Home extends Component {
                                                 />
                                             </div>
                                         )
-                                    })
+                                    }
+                                    )
                                 }
                             </div>
                         </div>
