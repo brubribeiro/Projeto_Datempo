@@ -73,8 +73,6 @@ class Mostruario extends Component {
                 this.setState({
                     listaOferta : this.props.location.state.filtroBusca
                   })
-                  console.log("Termo", this.state.listaOferta)
-
             }, 1000)
         } else {
             this.getOferta();
@@ -118,7 +116,6 @@ class Mostruario extends Component {
             .then(response => {
                 if (response.status === 200) {
                     this.setState({ listaOferta: response.data });
-                    console.log(response)
                 }
             })
     }

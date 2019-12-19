@@ -18,11 +18,10 @@ import Relogio from '../../assets/imagens/alarm-clock.png';
 import { Link } from 'react-router-dom';
 
 class Minhasofertas extends Component {
-    constructor(props) {
-        super(props)
+    constructor() {
+        super()
         this.state = {
             listaOfertas: [],
-            idOferta : this.props.idOferta,
 
             listaReservaOferta: [],
             listaCategoria: [],
@@ -295,14 +294,14 @@ class Minhasofertas extends Component {
                                                 <div className="descricao_pequena">
                                                     <p className="titulo_descricao">de R$ 8,00</p>
                                                     <p className="titulo_preco">Por</p>
-                                                    <p className="preco_descricao">R$ { o.preco.toFixed(2)}</p>
+                                                    <p className="preco_descricao">R$ { o.preco.toLocaleString("pt-br", { minimumFractionDigits: 2, maximumFractionDigits: 3 })}</p>
                                                 </div>
 
                                                 <div className="descricao_pequena_logo">
                                                     <p className="titulo_descricao_logo">DATEMPO</p>
                                                     <div className="validade_mostruario">
                                                         <img src={Relogio} alt="Alarme" />
-                                                        <p className="descricao"> Faltam: {this.ContagemDias(this.props.validade)}</p>
+                                                        <p className="descricao"> Faltam: {this.ContagemDias(o.validade)}</p>
                                                     </div>
                                                 </div>
                                             </div>

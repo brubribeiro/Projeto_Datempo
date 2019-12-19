@@ -63,7 +63,7 @@ class Header extends Component {
 
             <header>
                 <div className="container_h">
-                <a href="/"><img className="logo" src={Logo} alt="Logo Datempo" /></a>
+                    <a href="/"><img className="logo" src={Logo} alt="Logo Datempo" /></a>
 
                     <nav className="navbar-menu">
                         <label for="show-menu" className="show-menu">
@@ -120,12 +120,12 @@ class Header extends Component {
                                             <MDBDropdown dropdown className="menu">
                                                 <MDBDropdownToggle>
                                                     MEU PERFIL  <i class="fas fa-caret-down"></i>
-                                                        </MDBDropdownToggle>
+                                                </MDBDropdownToggle>
                                                 <MDBDropdownMenu basic>
-                                                <MDBDropdownItem>
-                                                <img src={carrinho} />
-                                                <Link to="/reservas">Minhas Reservas</Link>
-                                            </MDBDropdownItem>
+                                                    <MDBDropdownItem>
+                                                        <img src={carrinho} />
+                                                        <Link to="/reservas">Minhas Reservas</Link>
+                                                    </MDBDropdownItem>
                                                     <MDBDropdownItem>
                                                         <img src={config} ></img>
                                                         <Link to="/perfilusuario">Configurações</Link>
@@ -174,10 +174,7 @@ class Header extends Component {
                                     onChange={this.atualizaCampo.bind(this)}
                                     onKeyDown={this._handleKeyDown}
                                 />
-                                <img
-                                    src={Buscar}
-                                    id="btnbusca"
-                                    alt="Buscar" />
+                                <a onClick={this.getFiltroBusca}><img id="btnbusca" src={Buscar} alt="Buscar" /></a>
                             </div>
                         </form>
                     </nav>
