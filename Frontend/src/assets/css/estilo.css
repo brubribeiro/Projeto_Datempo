@@ -916,7 +916,6 @@ input:disabled {
     background: var(--cinza);
   }
   .form-control{
-    width: 490px;;
     max-width: none;
   }
   
