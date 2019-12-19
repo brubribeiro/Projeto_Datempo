@@ -4,9 +4,9 @@ import Footer from '../../components/Footer/Footer';
 import api from '../../services/api';
 import CardOferta from '../../components/Card/CardOferta.js';
 
-import banner from '../../assets/imagens/bannerAlimento.png';
-import banner2 from '../../assets/imagens/BannerFrutas.jpg';
-import banner3 from '../../assets/imagens/bannerA.png';
+import banner from '../../assets/imagens/PRODUTOS ORGÂNICOS (1).png';
+import banner2 from '../../assets/imagens/DATEMPO DE COMPRAR.png';
+import banner3 from '../../assets/imagens/bannerAlimento.png';
 
 
 
