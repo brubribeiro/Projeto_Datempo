@@ -8,9 +8,6 @@ import banner from '../../assets/imagens/bannerAlimento.png';
 import banner2 from '../../assets/imagens/BannerFrutas.jpg';
 import banner3 from '../../assets/imagens/bannerA.png';
 
-
-
-
 import {
     MDBCarousel,
     MDBCarouselInner,

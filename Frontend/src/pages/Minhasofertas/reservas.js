@@ -18,6 +18,8 @@ class Reservas extends Component {
             listaReservaOferta: [],
             mensagemSucesso: "",
 
+            loading: false,
+
         }
 
     }
@@ -27,6 +29,8 @@ class Reservas extends Component {
     }
 
     deletarReserva = (id) => {
+
+        this.setState({ mensagemSucesso: "" })
         api.delete("reserva/" + id)
             .then(() => {
                 this.setState({ mensagemSucesso: "Reserva Entregue com sucesso!" })
@@ -37,11 +41,15 @@ class Reservas extends Component {
 
     }
     getReservaOferta = () => {
+        this.setState({ loading: true });
         api.get('/reserva')
             .then(response => {
                 if (response.status === 200) {
                     this.setState({ listaReservaOferta: response.data });
                 }
+                setTimeout(() => {
+                    this.setState({ loading: false });
+                }, 2000);
             })
     }
 
@@ -56,7 +64,7 @@ class Reservas extends Component {
                             {
                                 this.state.mensagemSucesso &&
                                 <Alert variant="success" disabled>
-                                <Alert.Heading>{this.state.mensagemSucesso}</Alert.Heading>
+                                    <Alert.Heading>{this.state.mensagemSucesso}</Alert.Heading>
                                 </Alert>
                             }
 
@@ -103,7 +111,7 @@ class Reservas extends Component {
                                     }
                                 </MDBTableBody>
                             </MDBTable>
-                            <hr/>
+                            <hr />
                         </div>
                     </div>
                 </main>

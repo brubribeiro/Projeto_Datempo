@@ -3,6 +3,7 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import { parseJwt } from '../../services/auth';
 import api from '../../services/api';
+import {MDBAlert } from 'mdbreact';
 
 class login extends Component {
     constructor(props) {
@@ -22,6 +23,8 @@ class login extends Component {
 
             email: "",
             senha: "",
+            erroMsg: "",
+            sucessMsg: ""
         }
     }
 
@@ -46,7 +49,7 @@ class login extends Component {
                     }
                     if (parseJwt().Role === 'Administrador') {
                         console.log(this.props)
-                        this.props.history.push('/perfiladm');
+                        this.props.history.push('/adm/perfiladm');
                     }
                     if (parseJwt().Role === 'Consumidor') {
                         console.log(this.props)
@@ -184,6 +187,27 @@ class login extends Component {
                                             value={this.state.listaUsuario.senha}
                                             onChange={this.postSetState}
                                             required />
+                                    </label>
+                                    <label>
+                                        <button className="btn_login"
+                                            type="submit">Cadastrar
+                                        </button>
+                                        
+                                    </label>
+                                    <label>
+
+                                    {
+                                        this.state.erroMsg &&
+                                        <MDBAlert color="danger" >
+                                            {this.state.erroMsg}
+                                        </MDBAlert>
+                                    }
+                                    {
+                                        this.state.sucessMsg &&
+                                        <MDBAlert color="sucess" >
+                                            {this.state.sucessMsg}
+                                        </MDBAlert>
+                                    }
                                     </label>
                                 </form>
                             </div>

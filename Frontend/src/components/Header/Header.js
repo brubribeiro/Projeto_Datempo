@@ -77,7 +77,7 @@ class Header extends Component {
                             <Link to="/">Home</Link>
                             <MDBDropdown dropdown className="menu">
                                 <MDBDropdownToggle>
-                                    Intitucional
+                                    Institucional
                                 </MDBDropdownToggle>
                                 <MDBDropdownMenu>
                                     <MDBDropdownItem>
@@ -129,7 +129,7 @@ class Header extends Component {
                                                     </MDBDropdownItem>
                                                     <MDBDropdownItem>
                                                         <img src={carrinho} />
-                                                        <Link to="/carrinho">Carrinho</Link>
+                                                        <Link to="/reservas">Minhas reservas</Link>
                                                     </MDBDropdownItem>
                                                     <MDBDropdownItem>
                                                         <img src={Logout} ></img>

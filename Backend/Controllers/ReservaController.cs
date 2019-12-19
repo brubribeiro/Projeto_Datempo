@@ -47,6 +47,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="reserva">Passar objeto reserva</param>
         /// <returns>Cadastro de reserva</returns>
+    
         [HttpPost]
         public async Task<ActionResult<Reserva>> Post (Reserva reserva) {
             try {

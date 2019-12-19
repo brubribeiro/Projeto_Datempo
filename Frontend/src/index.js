@@ -75,7 +75,7 @@ const Rotas = (
                 <Route path="/mostruario" component={Mostruario} />
                 <PermissaoConsumidor path="/perfilusuario" component={Perfilusuario} />
                 <PermissaoFornecedor path="/minhasofertas" component={Minhasofertas} />
-                <PermissaoFornecedor path="/reservas" component={Reservas} />
+                <PermissaoConsumidor path="/reservas" component={Reservas} />
                 <PermissaoFornecedor path="/ofertas" component={cadastroOferta} />
                 <PermissaoAdmin path="/adm/usuario" component={Usuario} />
                 <PermissaoAdmin path="/adm/produto" component={Produto} />

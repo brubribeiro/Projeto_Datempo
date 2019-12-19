@@ -56,7 +56,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="oferta">Passar objeto oferta</param>
         /// <returns>Cadastro de oferta</returns>
-        //[Authorize (Roles = "Fornecedor")]
+        [Authorize (Roles = "Fornecedor")]
         [HttpPost]
         public async Task<ActionResult<Oferta>> Post ([FromForm] Oferta oferta) {
             try {
@@ -70,8 +70,8 @@ namespace backend.Controllers {
                     oferta.QuantVenda = int.Parse (Request.Form["quantVenda"]);
                     oferta.Imagem = _uploadRepo.Upload (arquivo, "imgOferta");
                     oferta.Descricao = Request.Form["descricao"].ToString ();
-                    oferta.IdUsuario = int.Parse(Request.Form["IdUsuario"]);
-                    oferta.IdProduto = int.Parse(Request.Form["IdProduto"]);
+                    oferta.IdUsuario = int.Parse (Request.Form["IdUsuario"]);
+                    oferta.IdProduto = int.Parse (Request.Form["IdProduto"]);
 
                     await _repositorio.Salvar (oferta);
                 } else {
@@ -91,6 +91,7 @@ namespace backend.Controllers {
         /// <returns>Alterar oferta</returns>
         //[Authorize (Roles = "Fornecedor")]
         [HttpPut ("{id}")]
+        //[Authorize (Roles = "Fornecedor")]
         public async Task<ActionResult> Put (int id, [FromForm] Oferta oferta) {
             if (id != oferta.IdOferta) {
                 return BadRequest (new { mensagem = "Oferta não encontrado", Erro = true });
@@ -105,7 +106,7 @@ namespace backend.Controllers {
                 oferta.QuantVenda = int.Parse (Request.Form["quantVenda"]);
                 oferta.Descricao = Request.Form["descricao"].ToString ();
                 oferta.Imagem = _uploadRepo.Upload (arquivo, "imgOferta");
-                
+
                 await _repositorio.Alterar (oferta);
             } catch (DbUpdateConcurrencyException) {
                 var oferta_valido = await _repositorio.BuscarPorID (id);
@@ -124,7 +125,7 @@ namespace backend.Controllers {
         /// </summary>
         /// <param name="id">Passar ID</param>
         /// <returns>Deletar oferta</returns>
-        // [Authorize (Roles = "Fornecedor")]
+        [Authorize (Roles = "Fornecedor")]
         [HttpDelete ("{id}")]
         public async Task<ActionResult<Oferta>> Delete (int id) {
             var oferta = await _repositorio.BuscarPorID (id);

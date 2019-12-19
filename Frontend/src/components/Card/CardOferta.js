@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Relogio from '../../assets/imagens/alarm-clock.png';
 import { MDBContainer, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter, MDBAlert } from 'mdbreact';
-import { Link, withRouter } from 'react-router-dom';
 import api from './../../services/api';
 import { parseJwt } from '../../services/auth';
 
@@ -16,8 +15,8 @@ class cardOferta extends Component {
             postReserva: {
                 quantCompra: "",
                 dataReserva: this.DataHoje(),
-                idOferta: "",
-                idUsuario: "",
+                idOferta: this.props.idOferta,
+                idUsuario: parseJwt().id,
             },
 
 
@@ -73,6 +72,15 @@ class cardOferta extends Component {
 
         r.preventDefault();
         console.log("Cadastrando");
+
+        console.log(parseJwt().id)
+
+        this.setState({
+            postSetState: {
+                ...this.state.postSetState,
+                idUsuario: parseJwt().id,
+            }
+        })
 
         api.post('/reserva', this.state.postReserva)
             .then(response => {
@@ -136,7 +144,7 @@ class cardOferta extends Component {
                 </div>
                 <MDBContainer >
                     <MDBModal isOpen={this.state.modal} toggle={this.toggle}>
-                        <form onSubmit={this.postReserva}>
+                        <form onSubmit={this.postReserva} key={this.props.idOferta}>
                             <MDBModalBody>
                                 <div className="div_conteudo_modal">
                                     <div className="imagem_modal">
@@ -210,7 +218,10 @@ class cardOferta extends Component {
                             </MDBModalBody>
                             <div className="modal_botoes">
                                 <button className="modal_botao_confirmar_reserva" onClick={this.toggle}>FECHAR</button>
-                                <button className="modal_botao_adicionar_carrinho" type="submit">ADICIONAR RESERVA</button>
+                                <button  onClick={() => (console.log("idOferta do card: ", this.props.idOferta))} to={{
+                                    pathname : "/reserva",
+                                    idOferta : this.state.idOferta
+                                }} className="modal_botao_adicionar_carrinho" type="submit">ADICIONAR RESERVA</button>
                             </div>
                         </form>
                     </MDBModal>
@@ -222,8 +233,3 @@ class cardOferta extends Component {
 }
 
 export default cardOferta;
-
-
-// name = "nomeCategoria"
-// value = { this.state.listaCategorias.nomeCategoria }
-// onChange = { this.postSetState }
