@@ -8,7 +8,6 @@ import { Link, withRouter } from 'react-router-dom';
 import './../../assets/css/header.css';
 import api from '../../services/api';
 import { usuarioAutenticado, parseJwt } from '../../services/auth';
-
 import { MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem } from 'mdbreact';
 
 class Header extends Component {
@@ -74,10 +73,10 @@ class Header extends Component {
                         <input type="checkbox" id="show-menu" />
 
                         <ul className="menu">
-                            <Link to="/">Home</Link>
+                            <Link to="/"><b>Home</b></Link>
                             <MDBDropdown dropdown className="menu">
                                 <MDBDropdownToggle>
-                                    Intitucional
+                                    Institucional  <i class="fas fa-caret-down"></i>
                                 </MDBDropdownToggle>
                                 <MDBDropdownMenu>
                                     <MDBDropdownItem>
@@ -88,12 +87,12 @@ class Header extends Component {
                                     </MDBDropdownItem>
                                 </MDBDropdownMenu>
                             </MDBDropdown>
-                            <Link to="/mostruario">Produtos</Link>
+                            <Link to="/mostruario"><b>Produtos</b></Link>
                             {usuarioAutenticado() && parseJwt().Role === "Fornecedor" ? (
                                 <>
                                     <MDBDropdown dropdown className="menu">
                                         <MDBDropdownToggle>
-                                            MEU PERFIL
+                                            MEU PERFIL <i class="fas fa-caret-down"></i>
                                         </MDBDropdownToggle>
                                         <MDBDropdownMenu basic>
                                             <MDBDropdownItem>
@@ -120,16 +119,12 @@ class Header extends Component {
                                         <>
                                             <MDBDropdown dropdown className="menu">
                                                 <MDBDropdownToggle>
-                                                    MEU PERFIL
+                                                    MEU PERFIL  <i class="fas fa-caret-down"></i>
                                                         </MDBDropdownToggle>
                                                 <MDBDropdownMenu basic>
                                                     <MDBDropdownItem>
                                                         <img src={config} ></img>
                                                         <Link to="/perfilusuario">Configurações</Link>
-                                                    </MDBDropdownItem>
-                                                    <MDBDropdownItem>
-                                                        <img src={carrinho} />
-                                                        <Link to="/carrinho">Carrinho</Link>
                                                     </MDBDropdownItem>
                                                     <MDBDropdownItem>
                                                         <img src={Logout} ></img>
@@ -143,7 +138,7 @@ class Header extends Component {
                                                 <>
                                                     <MDBDropdown dropdown className="menu">
                                                         <MDBDropdownToggle>
-                                                            MEU PERFIL
+                                                            MEU PERFIL  <i class="fas fa-caret-down"></i>
                                                         </MDBDropdownToggle>
                                                         <MDBDropdownMenu basic>
                                                             <MDBDropdownItem>

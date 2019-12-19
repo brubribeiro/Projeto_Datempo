@@ -20,7 +20,7 @@ class Menuadm extends Component {
               <h5 class="mb-0">
                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
                   aria-expanded="false" aria-controls="collapseOne">
-                  CATEGORIA
+                  CATEGORIA  <i class="fas fa-caret-down"></i>
         </button>
               </h5>
             </div>
@@ -36,7 +36,7 @@ class Menuadm extends Component {
               <h5 class="mb-0">
                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                   data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  OFERTA
+                  OFERTA  <i class="fas fa-caret-down"></i>
         </button>
               </h5>
             </div>
@@ -52,7 +52,7 @@ class Menuadm extends Component {
               <h5 class="mb-0">
                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                   data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  PRODUTO
+                  PRODUTO  <i class="fas fa-caret-down"></i>
         </button>
               </h5>
             </div>
@@ -67,7 +67,7 @@ class Menuadm extends Component {
               <h5 class="mb-0">
                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                   data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                  USUÁRIO
+                  USUÁRIO  <i class="fas fa-caret-down"></i>
         </button>
               </h5>
             </div>
