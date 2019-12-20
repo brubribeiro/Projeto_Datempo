@@ -21,6 +21,8 @@ class cardOferta extends Component {
 
 
             modal: false,
+            sucessMsg: "",
+            erroMsg: "",
 
             dataAtual: ""
         }
@@ -85,7 +87,7 @@ class cardOferta extends Component {
         api.post('/reserva', this.state.postReserva)
             .then(response => {
                 console.log(response);
-                this.setState({ sucessMsg: "Reserva realizada com sucesso!" });
+                this.setState({ sucessMsg: "Reserva realizada com sucesso!\nVerifique suas reservas na aba Minhas Reservas!!" });
             })
             .catch(error => {
                 console.log(error);
@@ -187,46 +189,60 @@ class cardOferta extends Component {
                                         className="form-control"
                                         id="formGroupExampleInput"
                                         name="quantCompra"
-                                        value = { this.state.listaReservas.quantCompra }
-                                        onChange = { this.postSetState }
-                                        />
+                                        value={this.state.listaReservas.quantCompra}
+                                        onChange={this.postSetState}
+                                    />
                                     <input
                                         type="hidden"
                                         className="form-control"
                                         id="formGroupExampleInput"
                                         name="dataReserva"
-                                        value = { this.state.listaReservas.dataReserva}
-                                        onChange = { this.postSetState }
+                                        value={this.state.listaReservas.dataReserva}
+                                        onChange={this.postSetState}
                                     />
                                     <input
                                         type="hidden"
                                         className="form-control"
                                         id="formGroupExampleInput"
                                         name="idUsuario"
-                                        value = { this.state.listaReservas.idUsuario}
-                                        onChange = { this.postSetState }
+                                        value={this.state.listaReservas.idUsuario}
+                                        onChange={this.postSetState}
                                     />
-                                     <input
+                                    <input
                                         type="hidden"
                                         className="form-control"
                                         id="formGroupExampleInput"
                                         name="idOferta"
-                                        value = { this.state.listaReservas.idOferta}
-                                        onChange = { this.postSetState }
+                                        value={this.state.listaReservas.idOferta}
+                                        onChange={this.postSetState}
                                     />
                                 </div>
                             </MDBModalBody>
-                            
+
                             <div className="modal_botoes">
                                 <button className="modal_botao_confirmar_reserva" onClick={this.toggle}>FECHAR</button>
-                                <button  onClick={() => (console.log("idOferta do card: ", this.props.idOferta))} to={{
-                                    pathname : "/reserva",
-                                    idOferta : this.state.idOferta
+                                <button onClick={() => (console.log("idOferta do card: ", this.props.idOferta))} to={{
+                                    pathname: "/reserva",
+                                    idOferta: this.state.idOferta
                                 }} className="modal_botao_adicionar_carrinho" type="submit">ADICIONAR RESERVA</button>
+                         
                             </div>
+                            {
+                                this.state.erroMsg &&
+                                <MDBAlert color="danger" >
+                                    {this.state.erroMsg}
+                                </MDBAlert>
+                            }
+                            {
+                                this.state.sucessMsg &&
+                                <MDBAlert color="sucess" >
+                                    {this.state.sucessMsg}
+                                </MDBAlert>
+                            }
                         </form>
                     </MDBModal>
                 </MDBContainer>
+            
             </div>
 
         )
